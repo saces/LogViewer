@@ -1,0 +1,6 @@
+Quick&Dirty demo for websockets
+
+needed node: http://github.com/saces/fred, grab branch 'websockets'
+http://github.com/saces/fred/tree/websockets
+
+If everything went ok, you will see a 'tail -F freenet-latest.log' in your browser window.
