@@ -4,7 +4,7 @@ function WebSocketTest()
 {
 	if ("WebSocket" in window)
 	{
-		// remove the note about 'use a webock browser'
+		// remove the note about 'use a websock browser'
 		document.getElementById('bah').innerText = "";
 	}
 	else
@@ -35,7 +35,10 @@ function StartLogging() {
 	ws.onmessage = function(evt) {
 		// alert("Got a sock from server: " + evt.data);
 		previusContent = document.getElementById('logcontent').innerText;
-		previusContent = previusContent.concat("" + evt.data + "\nNew Text added to the span HTML tag.\n"); 
+		if (previusContent.length > 4096) {
+			previusContent = previusContent.substr(1024);
+		}
+		previusContent = previusContent.concat("" + evt.data); 
 		document.getElementById('logcontent').innerText = previusContent;
 	};
 	ws.onclose = function(evt) {

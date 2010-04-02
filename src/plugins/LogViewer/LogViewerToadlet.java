@@ -88,7 +88,7 @@ public class LogViewerToadlet extends WebInterfaceToadlet implements WebSocketAc
 		logbox.addChild("#", "\u00a0");
 		logbox.addChild("a", "href", "javascript:StopLogging()", "Stop");
 		logbox.addChild("br");
-		logbox.addChild("span", "id", "logcontent", "\u00a0");
+		logbox.addChild("pre", "id", "logcontent", "\u00a0");
 
 		writeHTMLReply(ctx, 200, "OK", outer.generate());
 	}
